@@ -47,6 +47,7 @@ public class NewToDoActivity extends AppCompatActivity implements OnClickListene
     private String ToDoDate = "";
     private boolean ToDoFav = false;
     private boolean ToDoStatus = false;
+    private boolean backToShowToDo = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,7 @@ public class NewToDoActivity extends AppCompatActivity implements OnClickListene
         ToDoStatus = getIntent().getExtras().getBoolean("Status");
         EditToDo = getIntent().getExtras().getBoolean("EditToDo");
         ToDoID = getIntent().getExtras().getInt("ToDoID");
+        backToShowToDo = getIntent().getExtras().getBoolean("BackToShowToDo");
 
         // write values from intent to activity views, if Topic contains a value
         if (ToDoTopic.length() != 0) {
@@ -182,8 +184,7 @@ public class NewToDoActivity extends AppCompatActivity implements OnClickListene
 
     // button click on "Cancel" -> go back to MainActivity
     public void goToMain(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        goToRightActivity();
     }
 
     // image button is clicked -> change the fav status
@@ -223,13 +224,25 @@ public class NewToDoActivity extends AppCompatActivity implements OnClickListene
             sqlDB.insertToDo(userID, ToDoTopic, ToDoDesc, ToDoDate, ToDoFav, ToDoStatus);
             Toast.makeText(NewToDoActivity.this, R.string.insertSuccess, Toast.LENGTH_SHORT).show();
         } else {
-        // update To-Do in database
+            // update To-Do in database
             sqlDB.updateToDo(ToDoTopic, ToDoDesc, ToDoDate, ToDoFav, ToDoID);
             Toast.makeText(NewToDoActivity.this, R.string.editSuccess, Toast.LENGTH_SHORT).show();
         }
         // go back to Main Activity (displaying all To-Dos)
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        goToRightActivity();
+
+
+    }
+    private void goToRightActivity(){
+        if (backToShowToDo){
+            Intent intent = new Intent(this, ShowToDo.class);
+            intent.putExtra("toDoID", ToDoID);
+            startActivity(intent);
+        }
+        else{
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
 }

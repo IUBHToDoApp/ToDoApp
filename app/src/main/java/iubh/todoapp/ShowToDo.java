@@ -130,6 +130,10 @@ public class ShowToDo extends AppCompatActivity {
             shownStatus.setTextColor(Color.GREEN);
         }
     }
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
 
     private void goToChangeToDo(){
         Intent intent = new Intent(this, NewToDoActivity.class);
@@ -141,6 +145,7 @@ public class ShowToDo extends AppCompatActivity {
         intent.putExtra("Status", shownToDo.getStatus());
         intent.putExtra("EditToDo", true);
         intent.putExtra("ToDoID", shownToDo.getID());
+        intent.putExtra("BackToShowToDo", true);
         startActivity(intent);
     }
 }
