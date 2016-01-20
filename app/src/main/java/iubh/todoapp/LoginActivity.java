@@ -31,21 +31,21 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onRestart(){
         super.onRestart();
-        this.checkLogInState();
         sqlDB.open();
+        this.checkLogInState();
     }
 
     @Override
     protected void onResume(){
         super.onResume();
-        this.checkLogInState();
         sqlDB.open();
+        this.checkLogInState();
     }
 
     @Override
     protected void onPause(){
         super.onPause();
-        //sqlDB.close();
+        sqlDB.close();
     }
 
     @Override

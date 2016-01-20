@@ -118,17 +118,7 @@ public class MainActivity extends AppCompatActivity  {
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        String userName = ((ToDoApp)this.getApplication()).getUsername();
-        TextView tvUser = (TextView) findViewById(R.id.UserName);
-        tvUser.setText(userName);
-        return true;
-    }
 
-    @Override
     // handles action bar item clicks
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
