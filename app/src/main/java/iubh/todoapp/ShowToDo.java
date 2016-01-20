@@ -1,5 +1,6 @@
 package iubh.todoapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -38,8 +39,7 @@ public class ShowToDo extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                goToChangeToDo();
             }
         });
 
@@ -129,5 +129,18 @@ public class ShowToDo extends AppCompatActivity {
             shownStatus.setText(getResources().getText(R.string.todo_status) + " " + getResources().getText(R.string.show_statusFalse));
             shownStatus.setTextColor(Color.GREEN);
         }
+    }
+
+    private void goToChangeToDo(){
+        Intent intent = new Intent(this, NewToDoActivity.class);
+        // add To-Do values
+        intent.putExtra("Topic", shownToDo.getTopic());
+        intent.putExtra("Desc", shownToDo.getDesc());
+        intent.putExtra("Date", shownToDo.getDate());
+        intent.putExtra("Fav", shownToDo.getFav());
+        intent.putExtra("Status", shownToDo.getStatus());
+        intent.putExtra("EditToDo", true);
+        intent.putExtra("ToDoID", shownToDo.getID());
+        startActivity(intent);
     }
 }
