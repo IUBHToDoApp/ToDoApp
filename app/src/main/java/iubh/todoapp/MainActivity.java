@@ -34,7 +34,7 @@ import iubh.todoapp.SQLite.SQLiteDAO;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.*;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity  {
 
     // Variables
     private SQLiteDAO sqlDB;
@@ -62,15 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-        // set navigation drawer
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         // creates and opens the database
         sqlDB = new SQLiteDAO(this);
@@ -150,83 +142,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
 
-    @Override
-    // handles navigation view item clicks
-    public boolean onNavigationItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        // check
-        switch (id) {
-            case R.id.nav_date:
-                Collections.reverse(this.toDoList);
-                this.displayToDoList(this.toDoList);
-                break;
-            case R.id.nav_fav:
-                this.showOnlyFav = !this.showOnlyFav;
-                this.displayToDoList(this.toDoList);
-                break;
-            case R.id.nav_done:
-                this.showOnlyDone = !this.showOnlyDone;
-                this.displayToDoList(this.toDoList);
-                break;
-            case R.id.nav_today:
-                this.showOnlyToday = !this.showOnlyToday;
-                this.displayToDoList(this.toDoList);
-                break;
-            case R.id.nav_reset:
-                this.showOnlyDone = false;
-                this.showOnlyToday = false;
-                this.showOnlyFav = false;
-                this.displayToDoList(this.toDoList);
-                break;
-            case R.id.nav_share:        // create PDF document with all To-Dos and offer share possibilities
-                // start creating PDF document
-                try {
-                    todoPDF = createPDF();
-                } catch (FileNotFoundException ex) {
-                    ex.printStackTrace();
-                } catch (DocumentException ex) {
-                    ex.printStackTrace();
-                }
-                // intent to choose where to share the PDF document
-                Intent intent_share = new Intent(Intent.ACTION_SEND);
-                intent_share.setType("application/pdf");
-                intent_share.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + todoPDF.getAbsolutePath()));
-                startActivity(Intent.createChooser(intent_share, ""));
-                break;
-            case R.id.nav_send:     // create PDF document with all To-Dos and send it via e-mail
-                // start creating PDF document
-                try {
-                    todoPDF = createPDF();
-                } catch (FileNotFoundException ex) {
-                    Toast.makeText(MainActivity.this, "An error occurred while creating PDF", Toast.LENGTH_SHORT).show();
-                    ex.printStackTrace();
-                } catch (DocumentException ex) {
-                    Toast.makeText(MainActivity.this, "An error occurred while creating PDF", Toast.LENGTH_SHORT).show();
-                    ex.printStackTrace();
-                }
-                // start sending e-mail
-                Intent intent_email = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:"));
-                intent_email.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.mail_subject));
-                intent_email.putExtra(Intent.EXTRA_TEXT, getString(R.string.mail_content));
-                intent_email.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + todoPDF.getAbsolutePath()));
-
-                try {
-                    startActivity(intent_email);
-                    Log.i("Finished sending email", "");
-                }
-                catch (ActivityNotFoundException ex) {
-                    Toast.makeText(MainActivity.this, "An error occurred while sending e-mail", Toast.LENGTH_SHORT).show();
-                    ex.printStackTrace();
-                }
-                break;
-        }
-
-        // close navigation drawer
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
 
     // intent to start activity login
     private void goToLogIn(){

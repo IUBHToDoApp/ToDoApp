@@ -103,7 +103,8 @@
             android:layout_height="75dp"
             android:text="@string/stringRegister"
             android:id="@+id/login_ButtonRegister"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="goToRegister" />
     </LinearLayout>
 
 </RelativeLayout>

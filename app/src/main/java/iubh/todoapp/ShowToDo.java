@@ -50,6 +50,34 @@ public class ShowToDo extends AppCompatActivity {
         sqlDB = new SQLiteDAO(this);
         sqlDB.open();
         // gets ToDos from database and displays them in listview
+        this.initActivity();
+    }
+    protected void onPause(){
+        super.onPause();
+        //sqlDB.close();
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        sqlDB.close();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        sqlDB.open();
+        this.initActivity();
+    }
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        sqlDB.open();
+        this.initActivity();
+    }
+
+    private void initActivity(){
         shownToDo = sqlDB.getToDoByID(toDoID);
 
         TextView shownTopic = (TextView)findViewById(R.id.show_Topic);
@@ -59,7 +87,7 @@ public class ShowToDo extends AppCompatActivity {
         // displays the due date
         TextView shownDate= (TextView)findViewById(R.id.show_Date);
         GregorianCalendar toDoDate = shownToDo.getGregorianCalendar();
-        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy hh:MM");
+        SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy kk:mm");
         String date = format.format(toDoDate.getTime());
         shownDate.setText(getResources().getText(R.string.todo_date) + " " + date);
         ImageView favIcon = (ImageView)findViewById(R.id.show_favIcon);
@@ -101,27 +129,5 @@ public class ShowToDo extends AppCompatActivity {
             shownStatus.setText(getResources().getText(R.string.todo_status) + " " + getResources().getText(R.string.show_statusFalse));
             shownStatus.setTextColor(Color.GREEN);
         }
-    }
-    protected void onPause(){
-        super.onPause();
-        //sqlDB.close();
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        sqlDB.close();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        sqlDB.open();
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        sqlDB.open();
     }
 }

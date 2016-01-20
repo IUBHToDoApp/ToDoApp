@@ -5,7 +5,7 @@ import android.app.Application;
 public class ToDoApp extends Application {
     private String username = null;
     private int userID;
-    private boolean debugMode = true;
+    private boolean debugMode = false;
 
     // getter method for UserName
     public String getUsername() {
