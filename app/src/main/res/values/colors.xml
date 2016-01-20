@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XML file to define colors -->
+<resources>
+
+    <!-- colors to customize the app theme -->
+    <color name="colorPrimary">@color/IUBH_dark</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">@color/IUBH_dark</color>
+
+    <!-- colors of IUBH logo -->
+    <color name="IUBH_dark">#009091</color>
+    <color name="IUBH_medium">#63BBBA</color>
+    <color name="IUBH_light">#BCDFDD</color>
+
+</resources>

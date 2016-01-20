@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ToDoApp</string>
+    <string name="action_logout">Logout</string>
+    <string name="nav_communicate">Kommunikation</string>
+    <string name="nav_date">Fälligkeitsdatum</string>
+    <string name="nav_done">Erledigungsstatus</string>
+    <string name="nav_fav">Favoritenmerkmal</string>
+    <string name="nav_loggedIn">Eingeloggt als:</string>
+    <string name="nav_send">Sende PDF Übersicht per E-Mail</string>
+    <string name="nav_share">Teile PDF Übersicht</string>
+    <string name="nav_sort">Sortiere nach ...</string>
+    <string name="nav_today">Zeige alle heutigen To-Dos</string>
+    <string name="navigation_drawer_close">Schließe den Navigation Drawer</string>
+    <string name="navigation_drawer_open">Öffne den Navigation Drawer</string>
+    <string name="helloMessage">Hallo!</string>
+    <string name="loginMessage">Bitte melden Sie sich an um die Anwendung nutzen zu können.</string>
+    <string name="registerMessage">Bitte geben Sie einen Benutzernamen und Passwort ein, mit dem Sie sich später einloggen können.</string>
+    <string name="stringBack">Zurück</string>
+    <string name="stringCancel">Abbrechen</string>
+    <string name="stringLogIn">Login</string>
+    <string name="stringPassword">Passwort:</string>
+    <string name="stringSafe">Speichern</string>
+    <string name="stringUsername">Benutzername:</string>
+    <string name="stringRegister">Registrieren</string>
+    <string name="title_activity_register">Registrierung</string>
+    <string name="context_delete">Löschen</string>
+    <string name="context_edit">Bearbeiten</string>
+    <string name="context_mail">Sende To-Do via E-Mail</string>
+    <string name="nav_reset">Alle To-Dos anzeigen</string>
+    <string name="todo_date">Fälligkeitsdatum: </string>
+    <string name="todo_desc">Inhalt: </string>
+    <string name="todo_fav">Favorit:</string>
+    <string name="todo_status">Status:</string>
+    <string name="todo_topic">Titel: </string>
+    <string name="mail_content">Eine Übersicht über meine To-Dos befinden sich im Anhang. </string>
+    <string name="mail_subject">Meine To-Dos</string>
+
+    <!-- strings for showToDO -->
+    <string name="show_statusTrue">Noch nicht erledigt!</string>
+    <string name="show_statusFalse">Bereits erledigt!</string>
+    <string name="show_elapseMessage">Noch DD Tage, HH Stunden und MM Minuten bis zum ablauf!</string>
+    <string name="show_alreadyElapsedMessage">Bereits abgelaufen!</string>
+</resources>

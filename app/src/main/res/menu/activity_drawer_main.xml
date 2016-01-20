@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XML menu file for navigation drawer body layout: creates the menu -->
+<!-- belongs to MAIN Activity -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--Todo: Change the icons -->
+
+    <!-- sorting possibilities -->
+    <group android:checkableBehavior="single">
+        <item android:title="@string/nav_sort">
+            <menu>
+                <item
+                    android:id="@+id/nav_date"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/nav_date" />
+                <item
+                    android:id="@+id/nav_fav"
+                    android:icon="@drawable/ic_menu_share"
+                    android:title="@string/nav_fav" />
+                <item
+                    android:id="@+id/nav_done"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/nav_done" />
+                <item
+                    android:id="@+id/nav_reset"
+                    android:icon="@drawable/ic_menu_send"
+                    android:title="@string/nav_reset" />
+            </menu>
+        </item>
+    </group>
+
+    <!-- only show To-Dos which are due today -->
+    <item
+        android:id="@+id/nav_today"
+        android:icon="@drawable/ic_menu_share"
+        android:title="@string/nav_today" />
+
+    <!-- further app possibilities:
+         1. create PDF overview of all To-Dos and offer possibilities to share this PDF
+         2. create PDF overview of all To-Dos and start e-mail intent to send this PDF -->
+    <item android:title="@string/nav_communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/nav_share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/nav_send" />
+        </menu>
+    </item>
+</menu>

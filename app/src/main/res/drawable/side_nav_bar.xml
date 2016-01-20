@@ -1,0 +1,10 @@
+<!-- custom background for navigation drawer header -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="135"
+        android:endColor="@color/IUBH_light"
+        android:centerColor="@color/IUBH_medium"
+        android:startColor="@color/IUBH_dark"
+        android:type="linear" />
+</shape>

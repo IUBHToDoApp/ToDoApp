@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XML menu file for context menu: shown when long pressing a list view item -->
+<!-- belongs to MAIN Activity -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Edit To-Do item -->
+    <item android:id="@+id/context_edit"
+        android:title="@string/context_edit" />
+
+    <!-- Delete To-Do item -->
+    <item android:id="@+id/context_delete"
+        android:title="@string/context_delete" />
+
+    <!-- Send To-Do item via e-mail -->
+    <item android:id="@+id/context_mail"
+        android:title="@string/context_mail" />
+</menu>

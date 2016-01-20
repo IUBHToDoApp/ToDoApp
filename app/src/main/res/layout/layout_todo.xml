@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XML layout file for the layout of list view items
+     Layout of list view items consists of:
+     1. Check Box: To-Do is done or not
+     2. Text View: Topic
+     3. Text View: Due date
+     4. Image View: To-Do is favorite or not -->
+<!-- belongs to MAIN Activity -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    android:focusable="false"
+    android:longClickable="true" >
+
+    <CheckBox
+        android:id="@+id/list_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.1"
+        android:theme="@android:style/Theme.Material.Light"
+        tools:targetApi="lollipop"
+        android:focusable="false"
+        android:longClickable="true" />
+
+    <TextView
+        android:id="@+id/list_todo_topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Topic"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_gravity="center"
+        android:layout_weight="0.5"
+        android:focusable="false"
+        android:longClickable="true" />
+
+    <TextView
+        android:id="@+id/list_todo_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Due Date"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_gravity="center"
+        android:layout_weight="0.3"
+        android:focusable="false"
+        android:longClickable="true" />
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_weight="0.1"
+        android:id="@+id/imageView"
+        android:src="@android:drawable/sym_def_app_icon"
+        android:contentDescription="Favorite"
+        android:layout_gravity="center"
+        android:focusable="false"
+        android:longClickable="true" />
+
+</LinearLayout>

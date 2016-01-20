@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- XML layout file for the layout of register activity -->
+<!-- belongs to REGISTER Activity -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_register"
+    tools:context="iubh.todoapp.RegisterActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/stringRegister"
+        android:id="@+id/register_RegisterText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="35dp"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/registerMessage"
+        android:id="@+id/register_InfoText"
+        android:layout_below="@+id/register_RegisterText"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/stringUsername"
+        android:id="@+id/register_StringUsername"
+        android:layout_below="@+id/register_InfoText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/register_EditTextUsername"
+        android:layout_below="@+id/register_StringUsername"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/stringPassword"
+        android:id="@+id/register_StringPassword"
+        android:layout_below="@+id/register_EditTextUsername"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/register_EditTextPassword"
+        android:layout_below="@+id/register_StringPassword"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/register_EditTextPassword"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="@string/stringRegister"
+            android:id="@+id/register_ButtonRegister"
+            android:layout_weight="1"
+            android:onClick="registerUser" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="@string/stringBack"
+            android:id="@+id/register_ButtonBack"
+            android:layout_weight="1"
+            android:onClick="goToLogIn" />
+    </LinearLayout>
+
+</RelativeLayout>

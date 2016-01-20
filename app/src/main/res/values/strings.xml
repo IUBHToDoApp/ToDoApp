@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><!-- XML file to define strings -->
+<resources>
+    <string name="app_name">ToDoApp</string>
+
+    <!-- global strings -->
+    <string name="stringUsername">Username:</string>
+    <string name="stringPassword">Password:</string>
+    <string name="stringLogIn">Login</string>
+    <string name="stringRegister">Register</string>
+    <string name="stringBack">Back</string>
+    <string name="stringCancel">Cancel</string>
+    <string name="stringSafe">Save</string>
+
+    <!-- strings for action bar -->
+    <string name="action_logout">Logout</string>
+
+    <!-- strings for context menu -->
+    <string name="context_edit">Edit</string>
+    <string name="context_delete">Delete</string>
+    <string name="context_mail">Send To-Do via e-mail</string>
+
+    <!-- strings for navigation drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_sort">Sort by ...</string>
+    <string name="nav_date">Due date</string>
+    <string name="nav_fav">Favorite</string>
+    <string name="nav_done">Status</string>
+    <string name="nav_reset">Show all To-Dos</string>
+    <string name="nav_today">Show all today\'s To-Dos</string>
+    <string name="nav_communicate">Communicate</string>
+    <string name="nav_share">Share PDF overview</string>
+    <string name="nav_send">Send PDF overview via e-mail</string>
+    <string name="nav_loggedIn">Logged in as: </string>
+
+    <!-- strings for login activity -->
+    <string name="helloMessage">Hello!</string>
+    <string name="loginMessage">Please login to use this application.</string>
+
+    <!-- strings for register activity -->
+    <string name="title_activity_register">Registration</string>
+    <string name="registerMessage">Please define your username and password which is used for login.</string>
+
+    <!-- strings for description of To-Do parts (for email, PDF and new To-Do creation) -->
+    <string name="todo_topic">Topic: </string>
+    <string name="todo_desc">Description: </string>
+    <string name="todo_date">Due date: </string>
+    <string name="todo_fav">Favorite: </string>
+    <string name="todo_status">Status: </string>
+
+    <!-- strings for e-mail -->
+    <string name="mail_subject">My To-Dos</string>
+    <string name="mail_content">Please find an overview of my To-Dos attached.</string>
+    <string name="title_activity_show_to_do">ShowToDo</string>
+
+    <!-- strings for showToDo -->
+    <string name="show_statusTrue">Not done yet!</string>
+    <string name="show_statusFalse">Already done!</string>
+    <string name="show_elapseMessage">DD days, HH hours and MM minutes till elapse!</string>
+    <string name="show_alreadyElapsedMessage">Already elapsed!</string>
+
+    <!-- string for NewToDo -->
+    <string name="insertSuccess">To-Do added</string>
+    <string name="editSuccess">To-Do updated</string>
+</resources>
